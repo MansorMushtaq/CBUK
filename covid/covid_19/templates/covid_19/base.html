@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Project Title{% endblock %}</title>
+    <!-- Add your CSS links and other head content here -->
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Your header content goes here -->
+        <h1>Your Project Header</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'covid_19:signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'covid_19:login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <!-- Your footer content goes here -->
+        <p>&copy; {% now "Y" %} Covid List</p>
+    </footer>
+
+    <!-- Add your JavaScript scripts here if needed -->
+</body>
+</html>
